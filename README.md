@@ -8,10 +8,12 @@
   
   <h1>🚀 ActionLoop</h1>
   <p><strong>A hyper-vibrant, Agentic AI productivity suite built to keep you in the flow.</strong></p>
-  <p><i>Submission for the Gemini API Developer Competition / Hackathon</i></p>
+  <p><i>Submission for the Vibe2Ship / Hackathon</i></p>
 </div>
 
 ---
+## Demo
+action-loop-umber.vercel.app
 
 ## 🌟 The Vision
 
