@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #0a0514;
+  --bg-secondary: rgba(255, 255, 255, 0.03);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --accent-purple: #9d4edd;
+  --accent-purple-light: #c77dff;
+  --accent-neon: #ff00ff;
+  --accent-blue: #00bfff;
+  
+  --glass-bg: rgba(20, 10, 40, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(16px);
+  
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Global Mouse Glow */
+.global-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(157, 78, 221, 0.06),
+    transparent 40%
+  );
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+}
+
+/* App Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Background Canvas */
+.canvas-container {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 50%, #1a0b2e 0%, #0a0514 100%);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  background: rgba(10, 5, 20, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.brand-icon {
+  color: var(--accent-purple);
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-item-wrapper {
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.nav-item-content {
+  font-weight: 500;
+}
+
+.nav-item-wrapper:hover .nav-item-content {
+  color: #fff !important;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.card {
+  padding: 1.5rem;
+  border-radius: 24px;
+}
+
+.btn {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-neon));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+}
