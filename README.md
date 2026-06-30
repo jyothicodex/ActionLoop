@@ -9,6 +9,8 @@
   <h1>🚀 ActionLoop</h1>
   <p><strong>A hyper-vibrant, Agentic AI productivity suite built to keep you in the flow.</strong></p>
   <p><i>Submission for the Gemini API Developer Competition / Hackathon</i></p>
+  
+  <h3>🌍 <a href="YOUR_VERCEL_LINK_HERE">Live Demo</a></h3>
 </div>
 
 ---
