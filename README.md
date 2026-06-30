@@ -1,63 +1,49 @@
 <div align="center">
-  <h1>🚀 ActionLoop | Vibe2Ship Submission</h1>
+  <img src="https://img.shields.io/badge/Google_AI-Powered-4285F4?style=for-the-badge&logo=google" alt="Google AI Powered"/>
+  <img src="https://img.shields.io/badge/React-19-blue.svg?style=for-the-badge&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-latest-646CFF.svg?style=for-the-badge&logo=vite" alt="Vite" />
+  <img src="https://img.shields.io/badge/Firebase-Firestore-FFCA28.svg?style=for-the-badge&logo=firebase" alt="Firebase" />
+  
+  <br/>
+  
+  <h1>🚀 ActionLoop</h1>
   <p><strong>A hyper-vibrant, Agentic AI productivity suite built to keep you in the flow.</strong></p>
-
-  [![React](https://img.shields.io/badge/React-19-blue.svg?style=for-the-badge&logo=react)](https://react.js.org/)
-  [![Vite](https://img.shields.io/badge/Vite-latest-646CFF.svg?style=for-the-badge&logo=vite)](https://vitejs.dev/)
-  [![Firebase](https://img.shields.io/badge/Firebase-Auth_%26_Firestore-FFCA28.svg?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
-  [![Google AI](https://img.shields.io/badge/Google_Gemini-2.5_Flash-4285F4.svg?style=for-the-badge&logo=google)](https://ai.google.dev/)
+  <p><i>Submission for the Gemini API Developer Competition / Hackathon</i></p>
 </div>
 
-<br />
+---
 
-> **ActionLoop** seamlessly blends high-end aesthetics ("Vibe") with powerful, autonomous Google AI Studio-driven features to help you ship your goals faster. It is not just a chatbot—it is an **Agentic System** that manages your database.
+## 🌟 The Vision
+
+Modern productivity apps are inherently passive—they act as digital filing cabinets for tasks, relying entirely on the user's discipline to organize, prioritize, and execute. When a user is overwhelmed or struggling with executive dysfunction, a standard to-do list only adds to their cognitive load. 
+
+**ActionLoop is different.** It is an **Agentic Productivity System** that actively manages you. It seamlessly blends high-end aesthetics (the "vibe") with powerful, autonomous AI features driven by Google AI Studio. ActionLoop goes beyond standard wrapper apps by utilizing an AI that doesn't just chat with you, but acts on your behalf—creating tasks, structuring your time, and managing your database directly.
 
 ---
 
-## 🏆 Hackathon Evaluation Highlights
+## 🧠 Deep Tech Integration: How We Used Gemini
 
-### 1. Agentic Depth (20%) & Google Tech (15%)
-ActionLoop transcends typical wrapper apps by implementing **Function Calling (Tools)** via the `@google/genai` SDK.
-The AI Coach doesn't just give advice; it actively constructs JSON arrays of tasks based on your unstructured constraints (e.g., "I have 6 hours, plan my workout and study time") and pushes them directly to your live Firebase Firestore database via a custom `addMultipleTasks` tool.
+ActionLoop leverages the `@google/genai` SDK to implement advanced **Function Calling (Tools)**, turning Gemini from a conversational bot into an autonomous agent.
 
-```mermaid
-sequenceDiagram
-    participant User
-    participant ActionLoop UI
-    participant Gemini (Google AI)
-    participant Firebase
-    
-    User->>ActionLoop UI: "Plan my 6-hour study/workout day."
-    ActionLoop UI->>Gemini: Sends prompt + `addMultipleTasks` Tool Declaration
-    Gemini-->>ActionLoop UI: Returns Function Call data (Array of Tasks) + Conversational Text
-    ActionLoop UI->>Firebase: Iterates & Pushes tasks to Kanban Board
-    ActionLoop UI-->>User: Displays AI's conversational plan
-```
-
-### 2. Product Experience & Design (10%)
-Built with a heavy focus on modern web design, the app looks as good as it works.
-- **Glassmorphism UI:** Frosted glass panels over a deep, dynamic background.
-- **Interactive 3D Background:** Powered by `Three.js` and `@react-three/fiber`, reacting subtly to user presence.
-- **Fluid Animations:** Spring-physics animations using `framer-motion` for every interaction.
+* **Agentic Task Management:** When a user gives an unstructured command (e.g., *"I have 6 hours, plan my day around studying for my math exam and getting a workout in"*), Gemini processes the constraints.
+* **Tool Calling in Action:** Instead of just returning text advice, the Gemini model invokes our custom `addMultipleTasks` tool. It constructs a highly structured JSON array of optimized tasks.
+* **Direct Database Execution:** The application catches this function call and automatically pushes the AI-generated tasks directly to the user's live Firebase Firestore database. The user's Kanban board instantly populates with the AI's plan.
 
 ---
 
-## 🧠 Core Features
+## 🔥 Core Features
 
 ### 🤖 The Autonomous AI Coach
-Stuck on what to do next? Feeling overwhelmed? 
-The built-in **AI Coach** is a conversational agent specifically prompted to help you prioritize your day, regain focus, and stay motivated. 
-- **Time-Boxed Scheduling:** Automatically structures your day and adds tasks to your board.
-- **Micro-Stepping:** If you are procrastinating, the AI breaks your task down into 5-minute actionable steps.
+A persistent, conversational agent explicitly prompted to help users regain focus. It utilizes **"Micro-Stepping"**—if a user admits to procrastinating, the AI breaks their current task into hyper-specific, 5-minute actionable chunks to bypass executive dysfunction.
 
 ### ✨ Magic Goal Breakdown
-Big goals are intimidating. When you create a Long-Term Goal in ActionLoop, you can click **"Magic Breakdown"**. Google Gemini instantly processes your goal and automatically generates actionable, high-level milestones, turning a daunting dream into a structured plan.
+Users can input intimidating, long-term goals. By clicking **"Magic Breakdown,"** Gemini instantly analyzes the objective and generates a structured timeline of high-level milestones, transforming a daunting dream into an actionable roadmap.
 
-### 📋 Full Productivity Suite
-- **Dynamic Dashboard:** Get a personalized greeting and view upcoming deadlines at a glance.
-- **Kanban Tasks & List View:** Manage your day-to-day workload with a fully functional drag-and-drop Kanban board.
-- **Focus Mode:** A built-in Pomodoro-style timer that syncs directly with your active tasks.
-- **Calendar:** A visual calendar to see your deadlines efficiently.
+### 📋 Dynamic Kanban Board
+A fully functional, drag-and-drop workspace that syncs in real-time with the Firebase backend and the AI Coach's generated tasks.
+
+### 🍅 Integrated Focus Mode
+A built-in Pomodoro-style timer that syncs directly with the user's active tasks, ensuring they stay locked in on the priorities the AI helped them set.
 
 ---
 
@@ -65,8 +51,33 @@ Big goals are intimidating. When you create a Long-Term Goal in ActionLoop, you 
 
 - **Frontend Core:** React 19, Vite, Vanilla CSS
 - **AI / LLM Orchestration:** Google AI Studio (`@google/genai` SDK)
-- **Animations / 3D Graphics:** Framer Motion, Three.js, React Three Fiber
-- **Backend Infrastructure:** Firebase (Authentication & Firestore)
+- **Animations / Graphics:** Framer Motion, Three.js, React Three Fiber (Glassmorphism UI)
+- **Backend Infrastructure:** Firebase (Authentication & Firestore NoSQL)
+- **Deployment & Hosting:** Firebase Hosting & Google Cloud Run (Dockerized)
+
+---
+
+## 📁 Project Structure
+
+```text
+ActionLoop/
+├── src/
+│   ├── ai/                # Gemini API integration & Tool Declarations
+│   ├── assets/            # Static assets, fonts, and images
+│   ├── components/        # Reusable React components (UI, Kanban, Timer)
+│   ├── firebase/          # Firebase config and Firestore helper functions
+│   ├── pages/             # Main application views (Dashboard, Board, Settings)
+│   ├── App.jsx            # Main application router and state provider
+│   ├── index.css          # Global CSS (Vanilla CSS & Glassmorphism styles)
+│   └── main.jsx           # React DOM entry point
+├── public/                # Public assets
+├── dist/                  # Production build output
+├── Dockerfile             # Container configuration for Cloud Run
+├── firebase.json          # Firebase Hosting configuration
+├── .firebaserc            # Firebase project target
+├── package.json           # Project dependencies and scripts
+└── vite.config.js         # Vite bundler configuration
+```
 
 ---
 
@@ -74,15 +85,17 @@ Big goals are intimidating. When you create a Long-Term Goal in ActionLoop, you 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/actionloop.git
-   cd actionloop
+   git clone https://github.com/jyothicodex/ActionLoop.git
+   cd ActionLoop/ActionLoop
    ```
+
 2. **Install dependencies:**
    ```bash
    npm install
    ```
+
 3. **Set up your environment variables:**
-   Create a `.env.local` file in the root directory:
+   Create a `.env.local` file in the root directory and add your API keys:
    ```env
    VITE_GEMINI_API_KEY=your_gemini_api_key
    VITE_FIREBASE_API_KEY=your_firebase_api_key
@@ -92,10 +105,18 @@ Big goals are intimidating. When you create a Long-Term Goal in ActionLoop, you 
    VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
    VITE_FIREBASE_APP_ID=your_app_id
    ```
+
 4. **Run the development server:**
    ```bash
    npm run dev
    ```
 
+5. **Build for Production:**
+   ```bash
+   npm run build
+   ```
+
 ---
-*Built with ❤️ and 🤖 for Vibe2Ship.*
+<div align="center">
+  <i>Built with ❤️ for the Hackathon</i>
+</div>
