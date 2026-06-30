@@ -53,7 +53,7 @@ A built-in Pomodoro-style timer that syncs directly with the user's active tasks
 - **AI / LLM Orchestration:** Google AI Studio (`@google/genai` SDK)
 - **Animations / Graphics:** Framer Motion, Three.js, React Three Fiber (Glassmorphism UI)
 - **Backend Infrastructure:** Firebase (Authentication & Firestore NoSQL)
-- **Deployment & Hosting:** Firebase Hosting & Google Cloud Run (Dockerized)
+- **Deployment & Hosting:** Vercel
 
 ---
 
